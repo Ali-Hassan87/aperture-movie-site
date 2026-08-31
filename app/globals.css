@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #EFF1EC;
+  color: #15181C;
+}
+
+:focus-visible {
+  outline: 2px solid #1D3E8C;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.row-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.row-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Underline-draw link treatment used across editorial titles. */
+.ink-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ink-link:hover,
+.ink-link:focus-visible {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
